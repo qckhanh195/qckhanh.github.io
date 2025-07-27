@@ -230,22 +230,10 @@ body.light #themeToggle {
   cursor: pointer;
 }
 
-/* === Hiển thị menu xổ khi có class "show" === */
-.nav-items {
-  display: flex;
-}
-
 @media (max-width: 768px) {
-  nav {
-    flex-wrap: nowrap;
-    align-items: center;
-    padding: 10px 15px;
-  }
-
   #menuToggle {
     display: block;
     margin-left: auto;
-    margin-right: 10px;
   }
 
   .nav-items {
@@ -273,12 +261,13 @@ body.light #themeToggle {
     padding: 10px 16px;
     color: white;
   }
+}
+
 
   /* Ảnh nhỏ hơn khi ở mobile */
   .images img {
     max-width: 150px;
   }
-}
 
 /* === Chế độ sáng cho menu xổ === */
 body.light .nav-items {
@@ -297,3 +286,76 @@ body.light #menuToggle {
   color: #222;
 }
 
+/* Nút menu ☰ / ✕ */
+#menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  #menuToggle {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 16px;
+  }
+
+  /* Ẩn QcKhanh và icon mặt trời / mặt trăng khi menu mở */
+  .nav-open .name,
+  .nav-open #themeToggle {
+    display: none !important;
+  }
+
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start; /* Căn trái */
+    width: 100%;
+    background-color: rgba(20, 20, 20, 0.95);
+    position: fixed;
+    top: 50px; /* dưới nút ✕ */
+    left: 0;
+    z-index: 1000;
+    border-radius: 0;
+    padding: 10px 0;
+  }
+
+  .nav-items.show {
+    display: flex;
+  }
+
+  .nav-items li {
+    width: 100%;
+  }
+
+  .nav-items li a {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 12px 20px;
+    color: white;
+    font-size: 18px;
+  }
+
+  /* Nếu ở chế độ sáng */
+  body.light .nav-items {
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  body.light .nav-items li a {
+    color: #111;
+  }
+
+  body.light .nav-items li a:hover {
+    background-color: #eee;
+  }
+
+  body.light #menuToggle {
+    color: #111;
+  }
+}
