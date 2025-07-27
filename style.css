@@ -92,9 +92,18 @@ nav a.name:hover {
     justify-content: center;
 }
 
+@media (max-width: 768px) {
+  #home h1 {
+    margin-left: 35px;
+  }
+}
+
+
+
 .screen h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
+    
 }
 
 .screen p {
@@ -316,9 +325,9 @@ body.light #menuToggle {
     flex-direction: column;
     align-items: flex-start; /* Căn trái */
     width: 100%;
-    background-color: rgba(20, 20, 20, 0.95);
+    background-color: rgba(31, 30, 30, 0.95);
     position: fixed;
-    top: 50px; /* dưới nút ✕ */
+    top: 45px; /* dưới nút ✕ */
     left: 0;
     z-index: 1000;
     border-radius: 0;
@@ -336,19 +345,18 @@ body.light #menuToggle {
   .nav-items li a {
     display: block;
     width: 100%;
-    text-align: left;
-    padding: 12px 20px;
-    color: white;
+    padding: 12px 35px;
+    color: rgb(255, 255, 255);
     font-size: 18px;
   }
 
   /* Nếu ở chế độ sáng */
   body.light .nav-items {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(230, 228, 228, 0.95);
   }
 
   body.light .nav-items li a {
-    color: #111;
+    color: #000000;
   }
 
   body.light .nav-items li a:hover {
@@ -356,6 +364,6 @@ body.light #menuToggle {
   }
 
   body.light #menuToggle {
-    color: #111;
+    color: #000000;
   }
 }
