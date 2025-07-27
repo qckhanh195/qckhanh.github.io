@@ -219,3 +219,60 @@ nav {
 body.light #themeToggle {
     color: #222;
 }
+
+/* ===== Responsive cho điện thoại (max-width: 768px) ===== */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .nav-items {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .nav-items li {
+        width: 100%;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .screen h1 {
+        font-size: 1.8em;
+    }
+
+    .screen p {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+
+    .images {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .images img {
+        max-width: 90%;
+    }
+
+    #themeToggle {
+        margin: 10px 0 0 auto;
+    }
+
+    #backToTop {
+        bottom: 15px;
+        right: 15px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
