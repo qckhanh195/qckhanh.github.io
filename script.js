@@ -84,3 +84,19 @@ const redirect = sessionStorage.redirect;
     sessionStorage.redirect = null;
     history.replaceState(null, null, redirect);
   }
+
+// MENU TOGGLE (xổ/thu menu)
+const menuToggle = document.getElementById('menuToggle');
+const navItems = document.getElementById('navItems');
+
+menuToggle.addEventListener('click', () => {
+  navItems.classList.toggle('show');
+});
+
+// DARK / LIGHT TOGGLE
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('light');
+});
+
+

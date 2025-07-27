@@ -13,20 +13,20 @@
 } */
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  color: white;
-  overflow-y: scroll;
-  background-image: url('images/background_dark.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  transition: background-image 0.5s ease, background-color 0.3s ease;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    overflow-y: scroll;
+    background-image: url('images/background_dark.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    transition: background-image 0.5s ease, background-color 0.3s ease;
 }
 
 body.light {
-  background-image: url('images/background_light.png');
-  color: black;
+    background-image: url('images/background_light.png');
+    color: black;
 }
 
 nav {
@@ -220,59 +220,80 @@ body.light #themeToggle {
     color: #222;
 }
 
-/* ===== Responsive cho điện thoại (max-width: 768px) ===== */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
-    }
-
-    .nav-items {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        gap: 10px;
-        margin-top: 10px;
-    }
-
-    .nav-items li {
-        width: 100%;
-    }
-
-    nav a {
-        display: block;
-        width: 100%;
-        padding: 10px;
-    }
-
-    .screen h1 {
-        font-size: 1.8em;
-    }
-
-    .screen p {
-        font-size: 1em;
-        padding: 0 10px;
-    }
-
-    .images {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .images img {
-        max-width: 90%;
-    }
-
-    #themeToggle {
-        margin: 10px 0 0 auto;
-    }
-
-    #backToTop {
-        bottom: 15px;
-        right: 15px;
-        padding: 8px 12px;
-        font-size: 14px;
-    }
+/* === Menu toggle button mặc định ẩn, chỉ hiện ở mobile === */
+#menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
 }
+
+/* === Hiển thị menu xổ khi có class "show" === */
+.nav-items {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  #menuToggle {
+    display: block;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(20, 20, 20, 0.95);
+    margin-top: 10px;
+    border-radius: 6px;
+    padding: 10px 0;
+  }
+
+  .nav-items.show {
+    display: flex;
+  }
+
+  .nav-items li {
+    width: 100%;
+  }
+
+  .nav-items li a {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 16px;
+    color: white;
+  }
+
+  /* Ảnh nhỏ hơn khi ở mobile */
+  .images img {
+    max-width: 150px;
+  }
+}
+
+/* === Chế độ sáng cho menu xổ === */
+body.light .nav-items {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+body.light .nav-items li a {
+  color: #111;
+}
+
+body.light .nav-items li a:hover {
+  background-color: #eee;
+}
+
+body.light #menuToggle {
+  color: #222;
+}
+
