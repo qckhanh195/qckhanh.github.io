@@ -79,4 +79,8 @@ document.getElementById("name").addEventListener("click", () => {
 //   themeToggle.textContent = body.classList.contains('light') ? '☀️' : '🌙';
 // });
 
-
+const redirect = sessionStorage.redirect;
+  if (redirect) {
+    sessionStorage.redirect = null;
+    history.replaceState(null, null, redirect);
+  }

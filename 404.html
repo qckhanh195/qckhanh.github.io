@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      // Redirect to index.html and preserve route
+      const redirectTo = '/' + location.pathname + location.search + location.hash;
+      sessionStorage.redirect = redirectTo;
+      location.replace('/');
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
