@@ -31,7 +31,7 @@ window.addEventListener("wheel", (e) => {
 
   setTimeout(() => {
     isScrolling = false;
-  }, 100);
+  }, 300);
 });
 
 window.addEventListener("scroll", () => {
@@ -64,14 +64,17 @@ const menuToggle = document.getElementById('menuToggle');
 const navItems = document.querySelector('.nav-items');
 
 menuToggle.addEventListener('click', () => {
-  navItems.classList.toggle('show');
-  menuToggle.textContent = navItems.classList.contains('show') ? '✕' : '☰';
+  const isOpen = navItems.classList.toggle('show');
+  menuToggle.textContent = isOpen ? '✕' : '☰';
+  document.body.classList.toggle('nav-open', isOpen);
 });
+
 
 // Tự đóng menu khi bấm vào mục
 document.querySelectorAll('.nav-items a').forEach(link => {
   link.addEventListener('click', () => {
     navItems.classList.remove('show');
     menuToggle.textContent = '☰';
+    document.body.classList.remove('nav-open');
   });
 });
