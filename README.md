@@ -5,5 +5,3 @@
 `Started from 2025/7`
 
 *Created for no particular reason :D hehe*
-
-**Thanks for stopping by :]]**
