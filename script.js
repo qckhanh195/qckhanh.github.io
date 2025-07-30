@@ -78,3 +78,22 @@ document.querySelectorAll('.nav-items a').forEach(link => {
     document.body.classList.remove('nav-open');
   });
 });
+
+document.querySelectorAll('.nav-items a').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault(); // Ngăn chuyển hướng mặc định
+
+    const targetId = this.getAttribute('data-target');
+    const section = document.getElementById(targetId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+
+      // Đổi URL trên thanh địa chỉ
+      history.pushState(null, "", "/" + targetId);
+    }
+
+    // Ẩn menu nếu đang ở mobile
+    document.querySelector('.nav-items').classList.remove('show');
+    document.getElementById('menuToggle').textContent = '☰';
+  });
+});

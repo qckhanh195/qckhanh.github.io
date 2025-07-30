@@ -73,24 +73,20 @@ nav a.logo:hover {
 }
 
 .nav-items {
-  display: none; /* Ẩn mặc định */
-  flex-direction: column;
-  align-items: flex-start;
-  position: fixed;
-  top: 65px; /* Dưới nút ☰ hoặc ✕ */
-  left: 0;
-  width: 100%;
-  background-color: rgba(31, 30, 30, 0.95);
-  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
   list-style: none;
-  gap: 20px;
-  z-index: 1000;
-  border-radius: 0;
+  margin: 0 120px 0 auto; /* căn giữa theo chiều ngang */
 }
 
-.nav-items.show {
-  display: flex;
+.nav-items li:not(:last-child)::after {
+  content: "|";
+  margin-left: 12px;
+  color: gray;
 }
+
 
 nav a {
   color: white;
@@ -246,8 +242,36 @@ body {
   #menuToggle {
     display: block;
     position: fixed;
-    top: 10px;
+    top: 8px;
     right: 16px;
+  }
+
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(31, 30, 30, 0.95);
+    padding: 10px 0;
+    z-index: 1000;
+    border-radius: 0;
+  }
+
+.nav-items li:not(:last-child)::after {
+  content: " ";
+  display: block;
+  width: calc(100% - 75px); /* trừ 20px mỗi bên */
+  height: 1px;
+  background-color: gray;
+  margin: 1px auto 1px auto;
+}
+
+
+  .nav-items.show {
+    display: flex;
   }
 
   .nav-items li {
@@ -287,3 +311,5 @@ body {
     right: 10px;
   }
 }
+
+
