@@ -5,13 +5,6 @@
   scroll-behavior: smooth;
 }
 
-/* body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #111;
-    color: white;
-    overflow-y: scroll;
-} */
-
 body {
   font-family: 'Segoe UI', sans-serif;
   color: white;
@@ -268,7 +261,6 @@ body {
   background-color: gray;
   margin: 1px auto 1px auto;
 }
-
 
   .nav-items.show {
     display: flex;
