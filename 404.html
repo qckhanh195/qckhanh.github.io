@@ -1,16 +1,99 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8" />
-    <title>Redirecting...</title>
-    <script type="text/javascript">
-      // Redirect to index.html and preserve route
-      const redirectTo = '/' + location.pathname + location.search + location.hash;
-      sessionStorage.redirect = redirectTo;
-      location.replace('/');
-    </script>
-  </head>
-  <body>
-    <p>Redirecting...</p>
-  </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 – Page Not Found | Quoc Khanh</title>
+    <link rel="icon" href="assets/images/icon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@700&family=Fira+Code:wght@400&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --bg: #0d0d14;
+            --text: #f0f0ff;
+            --muted: #9a9ab0;
+            --accent: #7c3aed;
+            --gradient: linear-gradient(135deg, #7c3aed, #06b6d4);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            overflow: hidden;
+        }
+        .glow {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+        }
+        .glow-1 { width: 400px; height: 400px; background: rgba(124,58,237,0.15); top: -100px; right: -100px; }
+        .glow-2 { width: 350px; height: 350px; background: rgba(6,182,212,0.1); bottom: -80px; left: -80px; }
+        .content { position: relative; z-index: 1; }
+        .code {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            color: #06b6d4;
+            background: rgba(6,182,212,0.1);
+            border: 1px solid rgba(6,182,212,0.25);
+            padding: 0.3rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            letter-spacing: 0.05em;
+        }
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(5rem, 20vw, 10rem);
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        p { color: var(--muted); font-size: 1.05rem; max-width: 460px; line-height: 1.7; margin: 0 auto 2.5rem; }
+        a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 8px;
+            background: var(--gradient);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(124,58,237,0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        a:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(124,58,237,0.6); }
+    </style>
+</head>
+<body>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="content">
+        <p class="code">error: 404 not_found</p>
+        <h1>404</h1>
+        <h2>Page Not Found</h2>
+        <p>Looks like you wandered off the map. This page doesn't exist or may have been moved.</p>
+        <a href="/">← Back to Home</a>
+    </div>
+</body>
 </html>
