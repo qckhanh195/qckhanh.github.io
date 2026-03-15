@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #fffbf5;
+    color: #1c1211;
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
+
+  ::selection {
+    background: #f97316;
+    color: #fff;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #fff7ed;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #f97316;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ea580c;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  button {
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  ul {
+    list-style: none;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #ea580c, #f97316, #d97706);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-hot {
+    background: linear-gradient(135deg, #dc2626, #f97316, #fbbf24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Light glass card */
+  .glass {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(249, 115, 22, 0.18);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 2px 20px rgba(249, 115, 22, 0.06);
+  }
+
+  .glass-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-hover:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(249, 115, 22, 0.45);
+    box-shadow: 0 8px 32px rgba(249, 115, 22, 0.18);
+    transform: translateY(-3px);
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 40px rgba(249, 115, 22, 0.2);
+  }
+
+  .glow-amber {
+    box-shadow: 0 0 40px rgba(251, 191, 36, 0.15);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #f97316, #fbbf24);
+    color: #fff;
+    padding: 0.75rem 1.75rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.35);
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.5);
+  }
+
+  .btn-outline {
+    padding: 0.75rem 1.75rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1.5px solid rgba(249, 115, 22, 0.5);
+    background: rgba(249, 115, 22, 0.06);
+    color: #c2410c;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .btn-outline:hover {
+    border-color: #f97316;
+    color: #ea580c;
+    transform: translateY(-2px);
+    background: rgba(249, 115, 22, 0.12);
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.15);
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.8rem;
+    color: #ea580c;
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    padding: 0.3rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* Shimmer submit button */
+  .shimmer-btn {
+    background: linear-gradient(
+      90deg,
+      #ea580c 0%,
+      #f97316 30%,
+      #fde68a 50%,
+      #f97316 70%,
+      #ea580c 100%
+    );
+    background-size: 200% auto;
+    animation: shimmer 2.5s linear infinite;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  /* Section backgrounds alternating */
+  .section-alt {
+    background: #fff7ed;
+  }
+
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
