@@ -204,19 +204,21 @@
 @media (max-width: 900px) {
   .coming-soon-layout {
     flex-direction: column;
+    padding: 2rem 0;
   }
 
   .coming-soon-left {
-    min-height: 50vh;
+    min-height: auto;
     flex: none;
+    padding: 1rem;
   }
 
   .coming-soon-right {
     flex: none;
-    padding: 2rem 1.5rem 3rem;
+    padding: 1rem 1.5rem 2rem;
     align-items: center;
     text-align: center;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .coming-soon-title {
@@ -229,10 +231,12 @@
 
   .right-content-block {
     align-items: center;
+    gap: 1rem;
   }
 
   .coming-soon-footer {
     text-align: center;
+    margin-top: 1rem;
   }
 }
 
